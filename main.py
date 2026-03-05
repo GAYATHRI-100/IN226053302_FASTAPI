@@ -7,7 +7,7 @@ products = [
     {"id": 2, "name": "Pen Set", "price": 49, "category": "Stationery", "in_stock": True},
     {"id": 3, "name": "Wireless Mouse", "price": 599, "category": "Electronics", "in_stock": True},
     {"id": 4, "name": "Desk Lamp", "price": 799, "category": "Electronics", "in_stock": False},
-    
+    # Q1 — Add 3 new products
     {"id": 5, "name": "Laptop Stand", "price": 1299, "category": "Electronics", "in_stock": True},
     {"id": 6, "name": "Mechanical Keyboard", "price": 2499, "category": "Electronics", "in_stock": True},
     {"id": 7, "name": "Webcam", "price": 1899, "category": "Electronics", "in_stock": False},
@@ -46,5 +46,5 @@ def search_products(keyword: str):
 @app.get("/products/deals")
 def get_deals():
     cheapest = min(products, key=lambda p: p["price"])
-    expensive = max(products, key=lambda p: p["price"])  
+    expensive = max(products, key=lambda p: p["price"])
     return {"best_deal": cheapest, "premium_pick": expensive}
