@@ -4,9 +4,7 @@ from typing import Optional
 
 app = FastAPI()
 
-# -----------------------------
-# Product Model
-# -----------------------------
+
 class NewProduct(BaseModel):
     name: str
     price: int
@@ -181,5 +179,6 @@ def get_product(product_id: int):
 
     if not product:
         return {"error": "Product not found"}
+
 
     return product
